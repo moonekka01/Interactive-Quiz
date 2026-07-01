@@ -1,0 +1,160 @@
+:root {
+    --primary-color: #4a6fa5;
+    --primary-hover: #3b5a84;
+    --success-color: #2ec4b6;
+    --error-color: #e71d36;
+    --bg-color: #f6f8fa;
+    --card-color: #ffffff;
+    --text-color: #2b2d42;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Quiz Card Container */
+.quiz-container, .result-container {
+    background-color: var(--card-color);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 550px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: var(--primary-color);
+    transition: width 0.4s ease;
+}
+
+/* Header */
+.quiz-header {
+    margin-bottom: 20px;
+}
+
+.question-number {
+    font-size: 0.9rem;
+    color: #8d99ae;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+#question {
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+
+/* Options */
+.options-list {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.options-list li {
+    margin-bottom: 12px;
+}
+
+.option-btn {
+    width: 100%;
+    background-color: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.option-btn:hover:not([disabled]) {
+    background-color: #eef1f6;
+    border-color: var(--primary-color);
+}
+
+/* Dynamic State Classes */
+.option-btn.correct {
+    background-color: #e6f9f7;
+    border-color: var(--success-color);
+    color: #0f5132;
+    font-weight: 600;
+}
+
+.option-btn.wrong {
+    background-color: #ffebee;
+    border-color: var(--error-color);
+    color: #842029;
+}
+
+/* Navigation Buttons */
+.next-btn, .restart-btn {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.next-btn:hover:not([disabled]), .restart-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.next-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Results Screen */
+.result-container {
+    text-align: center;
+}
+
+.score-box {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 20px 0;
+}
+
+#feedback-text {
+    margin-bottom: 25px;
+    color: #6c757d;
+}
